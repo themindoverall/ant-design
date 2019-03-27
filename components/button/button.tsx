@@ -73,7 +73,11 @@ export type NativeButtonProps = {
   htmlType?: ButtonHTMLType;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 } & BaseButtonProps &
-  React.ButtonHTMLAttributes<HTMLButtonElement>;
+  (
+    | React.ButtonHTMLAttributes<HTMLButtonElement>
+    | {
+        type?: ButtonType;
+      });
 
 export type ButtonProps = AnchorButtonProps | NativeButtonProps;
 
